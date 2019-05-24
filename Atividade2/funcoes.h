@@ -10,11 +10,12 @@ void ordena(FILE *arq, int vet[]){
     fread(vet, sizeof(int), 10, arq); //lendo do arquivo binario e colocando no vetor automaicamente
     fclose(arq);
     ordenaV(vet);
-    // tentando colocar o vetor ordenado em um novo arquivo
+    // colocando o vetor ordenado em um novo arquivo
     FILE *arq2;
     arq2 = fopen("vetorOrdenado.dat", "wb");
+    for(int i=0;i<10;i++)
+        fwrite(&vet[i], sizeof(int),1,arq);
     fclose(arq2);
-    //
 }
 
 void ordenaV(int vet[]){
@@ -30,7 +31,21 @@ void ordenaV(int vet[]){
     }
 }
 
-void imprimir(int vet[]){
+void imprimirDesordenado(){
+    int vet[10];
+    FILE *arq;
+    arq = fopen("atividade.dat", "rb");
+    fread(vet, sizeof(int),10,arq);
     for(int i=0;i<10;i++)
         printf("vet[%d] = %d\n", i, vet[i]);
 }
+
+void imprimirOrdenado(){
+    int vet[10];
+    FILE *arq;
+    arq = fopen("vetorOrdenado.dat", "rb");
+    fread(vet, sizeof(int),10,arq);
+    for(int i=0;i<10;i++)
+        printf("vet[%d] = %d\n", i, vet[i]);
+}
+
