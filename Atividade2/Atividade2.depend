@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1558638279 source:c:\users\usuario\downloads\4° periodo\ed2\atividade2-manipulacaoarquivo\atividade2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funcoes.h"
+
+1558696470 c:\users\usuario\downloads\4° periodo\ed2\atividade2-manipulacaoarquivo\atividade2\funcoes.h
+
